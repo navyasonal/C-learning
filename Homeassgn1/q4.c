@@ -1,30 +1,28 @@
-// Insertion sort in C
 
 #include <stdio.h>
 
-// Function to print an array
-void printArray(int array[], int size)
+void printArray(int a[], int s)
 {
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < s; i++)
     {
-        printf("%d ", array[i]);
+        printf("%d ", a[i]);
     }
     printf("\n");
 }
 
-void insertionSort(int array[], int size)
+void insertionSort(int a[], int s)
 {
-    for (int step = 1; step < size; step++)
+    for (int step = 1; step < s; step++)
     {
-        int key = array[step];
+        int key = a[step];
         int j = step - 1;
 
-        while (key < array[j] && j >= 0)
+        while (key < a[j] && j >= 0)
         {
-            array[j + 1] = array[j];
+            a[j + 1] = a[j];
             --j;
         }
-        array[j + 1] = key;
+        a[j + 1] = key;
     }
 }
 

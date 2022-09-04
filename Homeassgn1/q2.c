@@ -1,11 +1,24 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void delete(int a[],int n)
 {
-    int pos;
-    printf("Enter the position of the element to be deleted ");
-    scanf("%d",&pos);
+    int e,pos;
+    printf("Enter the element to be deleted ");
+    scanf("%d",&e);
 
+    for(int i=0;i<n;i++)
+    {
+        if(e==a[i])
+        pos=i;
+        else
+        pos=-1;
+    }
+    if(pos==-1)
+    {
+        printf("Element not found ");
+        exit(0);
+    }
     int newarr[n+1];
     for(int i=0;i<n+1;i++)
     {
