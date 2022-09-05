@@ -1,19 +1,28 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 int main()
 {
-    int i, n;
-    printf("\nEnter the number of elements\n");
-    scanf("%d", &n);
-    int a[n];
-    printf("\nEnter the value of the elments\n");
-    for(i=0; i<n; i++)
+    int n;
+    printf("Enter the number of elements in the array ");
+    scanf("%d",&n);
+     int arr[n];
+    printf("Enter the elements in the array ");
+    for(int i=0;i<n;i++)
     {
-        scanf("%d", &a[i]);
+        scanf("%d",&arr[i]);
     }
-    printf("\nArray in reverse order is\n");
-    for(i=n-1;i>=0; i--)
+    
+   printf("The array in reverse order is ");
+    int temp;
+    for (int i = 0; i < n / 2; i++)
     {
-        printf("%d\n", a[i]);
+        temp = arr[i];
+        arr[i] = arr[n - i - 1];
+        arr[n - i - 1] = temp;
     }
-    return 0;
+    for (int i = 0; i < n; i++)
+    {
+        printf("\t%d", arr[i]);
+    }
 }

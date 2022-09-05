@@ -1,39 +1,27 @@
 #include <stdio.h>
-
 int main()
 {
-    int n;
+    int i, n, num, pos, a[100];
     printf("Enter the number of elements ");
-    scanf("%d",&n);
-    int a[n];
-    printf("Enter the number of elements ");
-    for(int i=0;i<n;i++)
+    scanf("%d", &n);
+    printf("Enter the value of the elements");
+    for (i = 0; i < n; i++)
     {
-        scanf("%d",&a[i]);
+        scanf("%d", &a[i]);
     }
-   
-    int e,pos;
-    printf("Enter the element to be inserted ");
-    scanf("%d",&e);
-    printf("Enter the position of the element ");
-    scanf("%d",&pos);
-
-    int newarr[n+1];
-    for(int i=0;i<n+1;i++)
+    printf("the array is\n ");
+    for (i = 0; i < n; i++)
     {
-        if(i<pos)
-        newarr[i]=a[i];
-        if(i==pos)
-        {
-            newarr[pos]=e;
-        }
-        if(i>pos)
-        newarr[i+1]=a[i];
+        printf("%d\n ", a[i]);
     }
-    printf("The elements in the array are: ");
-    for(int i = 0; i <n+1; i++)
-    {
-        printf("%d ",newarr[i]);
-    }
-    return 0;
+    printf("Enter the position to be inserted");
+    scanf("%d", &pos);
+    printf("Enter the element to be inserted");
+    scanf("%d", &num);
+    for (i = n - 1; i >= pos - 1; i--)
+        a[i + 1] = a[i];
+    a[pos - 1] = num;
+    printf("Final array is ");
+    for (i = 0; i <= n; i++)
+        printf("%d\n", a[i]);
 }
