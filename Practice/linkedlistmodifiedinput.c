@@ -25,13 +25,7 @@ void create(int n)
     for(int i=2;i<=n;i++)
     {
         fnode=(struct node*)malloc(sizeof(struct node));
-        if(fnode==NULL){
-        printf("Memory cannot be allocated");
-        break;
-        }
-    
-    else
-    {
+       
     printf("Input the data for node %d ",i);
     scanf("%d",&num);
 
@@ -42,15 +36,14 @@ void create(int n)
     tmp=tmp->nextptr;
 
    
-     } } }
+     } } 
 
 
 void display()
 {
     struct node*tmp;
-    if(stnode==NULL)
-    printf("List is empty");
-    else{
+
+    
         tmp=stnode;
         while(tmp!=NULL)
         {
@@ -58,7 +51,7 @@ void display()
             tmp=tmp->nextptr;
         }
     }
-}
+
 int main()
 {
     int n,data;
