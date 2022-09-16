@@ -5,6 +5,7 @@ struct Node{
     int data;
     struct Node *next;
 };
+
 void linkedlistprint(struct Node *ptr)
 {
     while(ptr!=NULL){

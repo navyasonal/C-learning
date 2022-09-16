@@ -30,19 +30,49 @@ void create(int n)
         break;
         }
     
-    else
-    {
-        printf("Input the data for node %d ",i);
-        scanf("%d",&num);
+        else
+        {
+            printf("Input the data for node %d ",i);
+            scanf("%d",&num);
 
-        fnode->num=num;
-        fnode->nextptr=NULL;
+            fnode->num=num;
+            fnode->nextptr=NULL;
 
-        tmp->nextptr=fnode;  //for first iteration temp node would be head node
-        tmp=tmp->nextptr;
+            tmp->nextptr=fnode;  //for first iteration temp node would be head node
+            tmp=tmp->nextptr;
 
-   
+    
      } } }
+
+void insertatstart(){
+    int data;
+    struct node * new;
+    new= (struct node *)malloc(sizeof(struct node));
+    printf("Enter the value to be inserted ");
+    scanf("%d",&data);
+    
+    new->num=data;
+    new->nextptr=stnode;
+    stnode=new;
+
+}
+void insertatend(){
+    int data;
+    struct node *new,*temp;
+    new=(struct node *)malloc(sizeof(struct node));
+    printf("Enter the value to be inserted ");
+    scanf("%d",&data);
+
+    new->num=data;
+    new->nextptr=NULL;
+    temp=stnode;
+
+    while(temp!=NULL && temp->nextptr!=NULL){
+        temp=temp->nextptr;
+
+    }
+    temp->nextptr=new;
+}
 
 
 void display()
@@ -65,6 +95,8 @@ int main()
     printf("Input the number of nodes ");
     scanf("%d",&n);
     create(n);
+    insertatstart();
+    insertatend();
     printf("The values in nodes are \n");
     display();
     return 0;
