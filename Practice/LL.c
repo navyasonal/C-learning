@@ -27,8 +27,6 @@ void choice()
     scanf("%d", &c);
     if(c ==1)
     {
-      
-       
         printf("Enter the element to be inserted at the start of the node");
        insert(data);
        printf("The new list is \n");
@@ -61,8 +59,7 @@ void choice()
     }
     if(c==3)
     {
-        
-        printf("Enter the data to be inserted ");
+    printf("Enter the data to be inserted ");
    scanf("%d", &data);
     printf("Enter the position to be inserted ");
       scanf("%d", &position); 
@@ -79,8 +76,6 @@ void choice()
     }
 if(c==4)
 {
-   
-
     printf("Enter the position to be deleted ");
     scanf("%d", &pos);
 
@@ -95,10 +90,6 @@ if(c==4)
      printf("Finished");
 }
 }
-
-
-
-
 int main()
 {
     int n, data;
@@ -220,9 +211,6 @@ void insertNodeAtMiddle(int data, int position)
 
         temp = head;
 
-        /* 
-         * Traverse to the n-1 position 
-         */
         for(i=2; i<=position-1; i++)
         {
             temp = temp->next;
